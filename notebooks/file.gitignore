@@ -1,0 +1,15 @@
+# Ignore data
+data/*.csv
+data/*.zip
+
+# Ignore models
+models/
+*.pkl
+
+# Ignore temporary Jupyter and Python files
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Ignore Mac system files
+.DS_Store
