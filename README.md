@@ -1,4 +1,4 @@
-# CreditRisk360 🚦 (Work in Progress)
+# CreditRisk360 🚦
 An end-to-end explainable credit risk modeling pipeline using machine learning and SHAP visualizations.
 
 ## 🔍 Objective
