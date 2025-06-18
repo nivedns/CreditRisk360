@@ -6,8 +6,8 @@ import shap
 import matplotlib.pyplot as plt
 
 # Load model and sample data
-model = joblib.load('../models/xgb_credit_model.pkl')
-data = pd.read_csv('../data/clean_application.csv')
+model = joblib.load('models/xgb_credit_model.pkl')
+data = pd.read_csv('data/clean_application.csv')
 X = data.drop('TARGET', axis=1)
 X = X.select_dtypes(include=['number', 'bool'])
 X = X.astype('float64')  # For SHAP
@@ -44,9 +44,16 @@ pred_prob = model.predict_proba(input_df)[0, 1]
 st.subheader(f"🧮 Predicted Default Risk: {pred_prob:.2%}")
 
 # SHAP for this prediction
+
 with st.expander("🔍 Explain Prediction with SHAP"):
     explainer = shap.Explainer(model, X.sample(500, random_state=42))
     shap_values = explainer(input_df)
+
     st.write("Feature impact:")
-    fig = shap.plots.waterfall(shap_values[0], show=False)
-    st.pyplot(bbox_inches='tight', dpi=300, pad_inches=0)
+
+    shap.plots.waterfall(shap_values[0], show=False)
+    fig = plt.gcf()  # ✅ grab the current matplotlib figure
+    st.pyplot(fig)
+    plt.clf()  # 🔁 clears figure for the next use (optional)
+
+
