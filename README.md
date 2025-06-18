@@ -1,11 +1,6 @@
 # CreditRisk360 🚦
 An end-to-end explainable credit risk modeling pipeline using machine learning and SHAP visualizations.
 
-
-![App Screenshot](Images/AppDemo1.png)
-![App Screenshot](Images/AppDemo2.png)
-
-
 ## 🔍 Objective
 Predict loan default risk and provide transparent, user-friendly explanations to support fair and informed lending decisions.
 
@@ -25,3 +20,7 @@ Predict loan default risk and provide transparent, user-friendly explanations to
 ## 🚀 Run the App
 ```bash
 streamlit run app/main.py
+
+![App Screenshot](Images/AppDemo1.png)
+![App Screenshot](Images/AppDemo2.png)
+
